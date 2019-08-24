@@ -29,31 +29,28 @@ export default class LoginView extends Component {
   render() {
     return (
       <LinearGradient
-        colors={['#A3E7FC','#26C485']}
+        colors={['#FFFFFF', '#173753']}
         style={{ flex: 1 }}
       >
         <View style={styles.container}>
-          <View style={styles.formContainer}>
-
-            <View style={styles.inputContainer}>
-              <Image style={styles.inputIcon} source={{ uri: 'https://img.icons8.com/officel/40/000000/email.png' }} />
-              <TextInput style={styles.inputs}
-                placeholder="Email"
-                keyboardType="email-address"
-                underlineColorAndroid='transparent'
-                onChangeText={(email) => this.setState({ email })} />
-            </View>
-
-            <View style={styles.inputContainer}>
-              <Image style={styles.inputIcon} source={{ uri: 'https://png.icons8.com/key-2/ultraviolet/50/3498db' }} />
-              <TextInput style={styles.inputs}
-                placeholder="Password"
-                secureTextEntry={true}
-                underlineColorAndroid='transparent'
-                onChangeText={(password) => this.setState({ password })} />
-            </View>
+          <Image source={require('../PoolNVest/assets/logo.png')} />
+          <View style={styles.inputContainer}>
+            <Image style={styles.inputIcon} source={{ uri: 'https://img.icons8.com/officel/40/000000/email.png' }} />
+            <TextInput style={styles.inputs}
+              placeholder="Email"
+              keyboardType="email-address"
+              underlineColorAndroid='transparent'
+              onChangeText={(email) => this.setState({ email })} />
           </View>
 
+          <View style={styles.inputContainer}>
+            <Image style={styles.inputIcon} source={{ uri: 'https://png.icons8.com/key-2/ultraviolet/50/3498db' }} />
+            <TextInput style={styles.inputs}
+              placeholder="Password"
+              secureTextEntry={true}
+              underlineColorAndroid='transparent'
+              onChangeText={(password) => this.setState({ password })} />
+          </View>
           <TouchableHighlight style={[styles.buttonContainer, styles.loginButton]} onPress={() => this.onClickListener('login')}>
             <Text style={styles.loginText}>Login</Text>
           </TouchableHighlight>
@@ -110,10 +107,10 @@ const styles = StyleSheet.create({
     borderRadius: 30,
   },
   loginButton: {
-    backgroundColor: "#054A91",
+    backgroundColor: "#299490",
   },
   registerButton: {
-    backgroundColor: "#3E7CB1"
+    backgroundColor: "#1f496e"
   },
   loginText: {
     color: 'white',
