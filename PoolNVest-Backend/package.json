@@ -12,6 +12,7 @@
   "dependencies": {
     "app": "^0.1.0",
     "config": "^3.2.2",
+    "bcrypt-nodejs": "0.0.3",
     "express": "^4.17.1",
     "joi": "^14.3.1",
     "joi-objectid": "^2.0.0",
