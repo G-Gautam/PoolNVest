@@ -8,6 +8,7 @@
     "eject": "expo eject"
   },
   "dependencies": {
+    "email-validator": "^2.0.4",
     "expo": "^34.0.1",
     "expo-linear-gradient": "^6.0.0",
     "node-libs-react-native": "^1.0.3",

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { LinearGradient } from 'expo-linear-gradient'
+import { LinearGradient } from 'expo-linear-gradient';
+import * as EmailValidator from 'email-validator';
 
 import {
   StyleSheet,
@@ -9,7 +10,8 @@ import {
   Button,
   TouchableHighlight,
   Image,
-  Alert
+  Alert,
+  ColorPropType
 } from 'react-native';
 
 export default class LoginView extends Component {
@@ -18,6 +20,7 @@ export default class LoginView extends Component {
     super(props);
     this.state = {
       email: '',
+      validateEmail: false,
       password: '',
     }
   }
@@ -33,14 +36,14 @@ export default class LoginView extends Component {
         style={{ flex: 1 }}
       >
         <View style={styles.container}>
-          <Image source={require('../PoolNVest/assets/logo.png')} />
+          <Image style={styles.logo} source={require('../PoolNVest/assets/logo.png')} />
           <View style={styles.inputContainer}>
             <Image style={styles.inputIcon} source={{ uri: 'https://img.icons8.com/officel/40/000000/email.png' }} />
             <TextInput style={styles.inputs}
               placeholder="Email"
               keyboardType="email-address"
               underlineColorAndroid='transparent'
-              onChangeText={(email) => this.setState({ email })} />
+              onChangeText={(email) => this.setState({email})}></TextInput>
           </View>
 
           <View style={styles.inputContainer}>
@@ -71,10 +74,11 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     //backgroundColor: '#054A91'
   },
-  formContainer: {
-    marginTop: '20%'
+  logo: {
+    top: -80
   },
   inputContainer: {
+    top: -30,
     borderBottomColor: '#F5FCFF',
     backgroundColor: '#FFFFFF',
     borderRadius: 30,
@@ -98,6 +102,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center'
   },
   buttonContainer: {
+    top: -30,
     height: 45,
     flexDirection: 'row',
     justifyContent: 'center',
