@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "expo": "^34.0.1",
+    "expo-linear-gradient": "^6.0.0",
     "node-libs-react-native": "^1.0.3",
     "nodejs-mobile-react-native": "^0.4.3",
     "react": "16.8.3",
