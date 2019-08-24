@@ -8,12 +8,20 @@
     "eject": "expo eject"
   },
   "dependencies": {
+    "@expo/react-native-action-sheet": "^3.0.3",
     "expo": "^34.0.1",
+    "firebase": "^4.8.1",
+    "flow": "^0.2.3",
+    "link": "^0.1.5",
     "node-libs-react-native": "^1.0.3",
-    "react": "16.8.3",
+    "react": "^16.8.3",
     "react-dom": "^16.8.6",
     "react-native": "https://github.com/expo/react-native/archive/sdk-34.0.0.tar.gz",
+    "react-native-action-sheet": "^2.2.0",
+    "react-native-actionsheet": "^2.4.2",
+    "react-native-gifted-chat": "^0.3.0",
     "react-native-web": "^0.11.4",
+    "react-navigation": "^2.18.3",
     "vm-browserify": "^1.1.0"
   },
   "devDependencies": {
