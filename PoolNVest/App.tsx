@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { LinearGradient } from 'expo-linear-gradient';
 import * as EmailValidator from 'email-validator';
+import nodejs from 'nodejs-mobile-react-native';
 
 import {
   StyleSheet,
@@ -16,6 +17,18 @@ import {
 
 export default class LoginView extends Component {
 
+  // componentWillMount()
+  // {
+  //   nodejs.start('index.js');
+  //   nodejs.channel.addListener(
+  //     'message',
+  //     (msg) => {
+  //       alert('From node: ' + msg);
+  //     },
+  //     this 
+  //   );
+  // }
+
   constructor(props) {
     super(props);
     this.state = {
@@ -26,7 +39,29 @@ export default class LoginView extends Component {
   }
 
   onClickListener = (viewId) => {
-    Alert.alert("Alert", "Button pressed " + viewId);
+    if(viewId == "login"){
+      this.login();
+    }
+  }
+
+  login(){
+    fetch('http://100.64.228.206:3000/api/users', {
+      method: "POST",
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        username: this.state['email'],
+        password: this.state['password'],
+      }),
+    }).then((response) => response.json())
+        .then((responseJson) => {
+          return responseJson;
+        })
+        .catch((error) => {
+          console.error(error);
+        });
   }
 
   render() {
