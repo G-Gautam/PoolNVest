@@ -1,4 +1,4 @@
-const {User, validate} = require('../models/user');
+const {User, validate} = require('../models/user.js');
 const mongoose = require('mongoose');
 const express = require('express');
 const router = express.Router();
@@ -17,10 +17,6 @@ router.post('/', async (req,res) => {
 
     await user.save();
     res.send(user);
-    let genre = new genre({name : req.body.name});
-    genre = await genre.save();
-
-    res.send(genre);
 });
 
 module.exports = router;
