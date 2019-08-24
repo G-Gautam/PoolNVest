@@ -1,6 +1,15 @@
+import Main from './components/Main';
+import Chat from './components/Chat';
+import createStackNavigator from 'react-navigation';
+
+const navigator = createStackNavigator({
+  Main: { screen: Main },
+  Chat: { screen: Chat },
+});
+
+
 import React, { Component } from 'react';
 import { LinearGradient } from 'expo-linear-gradient';
-import * as EmailValidator from 'email-validator';
 
 import {
   StyleSheet,
