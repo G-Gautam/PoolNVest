@@ -7,14 +7,12 @@ const auth = require('./routes/auth');
 const express = require('express');
 const app = express();
 
-if (!config.get('jwtPrivateKey')) {
-    console.error('FATAL ERROR: jwtPrivateKey is not defined');
-    process.exit(1);
-}
-
-mongoose.connect('mongodb://localhost/users')
-.then(() => console.log('Connected to MongoDB...'))
-.catch(err => console.error('Could not connect to MongoDB', err));
+let dev_db_url = 'mongodb://teampool:teampooladmin1@ds119523.mlab.com:19523/hackthe6ix';
+let mongoDB = process.env.MONGODB_URI || dev_db_url;
+mongoose.connect(mongoDB);
+mongoose.Promise = global.Promise;
+let db = mongoose.connection;
+db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 
 app.use(express.json());
 app.use('/api/users', users);

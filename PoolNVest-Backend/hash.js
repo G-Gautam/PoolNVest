@@ -1,4 +1,6 @@
-//const bcrypt = require('bcrypt');
+
+const bcrypt = require('bcrypt-nodejs');
+
 
 //async function run(){
 //    console.log(salt);
